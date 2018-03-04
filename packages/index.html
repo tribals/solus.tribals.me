@@ -20,9 +20,17 @@
   <article>
     <h1>My own little repository for Solus</h1>
 
-    <p>You can use it like so:</p>
-    <pre><code>$ sudo eopkg add-repo Personal https://solus.tribals.me/packages/sharona/eopkg-index.xml.xz
-$ sudo eopkg update-repo</code></pre>
+    <p>You can use it like so: (you must insert this repo <i>before</i> default one<a href="#note1">*</a>)</p>
+    <pre><code>$ sudo eopkg list-repo
+$ sudo eopkg add-repo Personal https://solus.tribals.me/packages/sharona/eopkg-index.xml.xz
+$ sudo eopkg add-repo Solus https://packages.solus-project.com/shannon/eopkg-index.xml.xz
+</code></pre>
+
+    <p id="note1">
+      *
+      <blockquote>
+        <code>add-repo</code> has an option <code>--at</code> which should handle repos ordering, but it seems like there is a bag with it, and it is ingnored. So we must do a little dance with repos to achive proper ordering.
+      </blockquote>
   </article>
 </main>
 </body>
